@@ -5,7 +5,12 @@
 
 // Definition
 // ------------------------------------------------------------------------
-@mixin align ( $child: "div", $x: center, $y: middle ) {
+@mixin align (
+  $child: "div",
+  $x: center,
+  $y: middle
+) { 
+
   display: table;
 
   & > #{$child} {

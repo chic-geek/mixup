@@ -5,7 +5,11 @@
 
 // Definition
 // ------------------------------------------------------------------------
-@mixin ratio-box ( $width: 16, $height: 9 ) {
+@mixin ratio-box (
+  $width: 16,
+  $height: 9
+) {
+  
   display: block;
   height: 0;
   padding-bottom: ($height / $width) * 100%;
