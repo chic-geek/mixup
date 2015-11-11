@@ -1,22 +1,19 @@
 // ------------------------------------------------------------------------
-// Mixin: Centering with display: table;
+// Mixin: Cleafix
 // ------------------------------------------------------------------------
 //
 
 // Definition
 // ------------------------------------------------------------------------
-@mixin align (
-  $child: "div",
-  $x: center,
-  $y: middle
-) {
+@mixin clearfix () {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
 
-  display: table;
-
-  & > #{$child} {
-    display: table-cell;
-    text-align: $x;
-    vertical-align: $y;
+  &:after {
+    clear: both;
   }
 }
 
@@ -24,5 +21,5 @@
 // Examples / Usage
 // ------------------------------------------------------------------------
 .mixup--box-element {
-  @include align(".mixup--child-element", center, middle);
+  @include cleafix();
 }

@@ -1,5 +1,5 @@
 # Mixup
-Simple library of any mixins found or built than come in handy on a regular basis.
+Simple library of any mixins found or built that come in handy on a regular basis.
 
 Mixup can be added to any project giving you sassy super powers :)
 

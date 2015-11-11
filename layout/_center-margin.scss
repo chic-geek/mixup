@@ -1,28 +1,18 @@
 // ------------------------------------------------------------------------
-// Mixin: Centering with display: table;
+// Mixin: Centering with margin-auto;
 // ------------------------------------------------------------------------
 //
 
 // Definition
 // ------------------------------------------------------------------------
-@mixin align (
-  $child: "div",
-  $x: center,
-  $y: middle
-) {
-
-  display: table;
-
-  & > #{$child} {
-    display: table-cell;
-    text-align: $x;
-    vertical-align: $y;
-  }
+@mixin align-center () {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
 // Examples / Usage
 // ------------------------------------------------------------------------
 .mixup--box-element {
-  @include align(".mixup--child-element", center, middle);
+  @include align-center();
 }

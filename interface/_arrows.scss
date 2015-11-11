@@ -1,0 +1,64 @@
+// ------------------------------------------------------------------------
+// Mixin: CSS Arrows
+// ------------------------------------------------------------------------
+//
+
+// Definition
+// ------------------------------------------------------------------------
+@mixin arrow (
+  $direction,
+  $color,
+  $size
+) {
+
+  $base-font-size: 16;
+  $px-size: $size + px;
+  $rel-size: ($size / $base-font-size) + em;
+
+  width: 0;
+  height: 0;
+
+  @if $direction == "left"{
+    border-top: $px-size solid transparent;
+    border-right: $px-size solid $color;
+    border-bottom: $px-size solid transparent;
+
+    border-top: $rel-size solid transparent;
+    border-right: $rel-size solid $color;
+    border-bottom: $rel-size solid transparent;
+  }
+  @else if $direction == "right"{
+    border-top: $px-size solid transparent;
+    border-bottom: $px-size solid transparent;
+    border-left: $px-size solid $color;
+
+    border-top: $rel-size solid transparent;
+    border-bottom: $rel-size solid transparent;
+    border-left: $rel-size solid $color;
+  }
+  @else if $direction == "up"{
+    border-left: $px-size solid transparent;
+    border-right: $px-size solid transparent;
+    border-bottom: $px-size solid $color;
+
+    border-left: $rel-size solid transparent;
+    border-right: $rel-size solid transparent;
+    border-bottom: $rel-size solid $color;
+  }
+  @else if $direction == "down"{
+    border-left: $px-size solid transparent;
+    border-right: $px-size solid transparent;
+    border-top: $px-size solid $color;
+
+    border-left: $rel-size solid transparent;
+    border-right: $rel-size solid transparent;
+    border-top: $rel-size solid $color;
+  }
+}
+
+
+// Examples / Usage
+// ------------------------------------------------------------------------
+.mixup--box-element {
+  @include arrow("left", #FFFFFF, 10);
+}
